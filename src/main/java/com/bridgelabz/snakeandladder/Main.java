@@ -9,22 +9,25 @@ public class Main
     public static void main( String[] args )
     {
     	int i=0,count =0;
+    	String winner = "";
+    	int positionof1=0,positionof2=0;
+    	Player player1 = new Player();
+    	Player player2 = new Player();
     	while(i<100 && i>=0) {
-    		Random random = new Random(); //instance of random class
-    	    int int_random = random.nextInt(6) + 1;
-    	    int int_choice = random.nextInt(3) + 1;
-    	    System.out.println(i);
-    	    if(int_choice == 2)	
-    	    	i = i + int_random;
-    	    else if(int_choice == 3)
-    	    	i = i - int_random;
-    	    count = count+1;
-    	    if(i<0)
-    	    	i=i-i;
-    	    if(i>100)
-    	    	i=100;
-    	}
+    		positionof1 = player1.player(positionof1);
+    		positionof2 = player2.player(positionof2);
+    		count = count+1;
+    		i = Math.max(positionof1, positionof2);
+    		
+    		if(positionof1>=100) {
+    			winner = "winner is player 1";
+    			break;
+    		}
+    		else if(positionof2>=100)
+    			winner = "winner is player 2";
+    		}
     	System.out.println(i);
+    	System.out.println(winner);
     	System.out.println("final"+count);
     }
 }
