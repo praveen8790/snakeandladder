@@ -1,5 +1,4 @@
 package com.bridgelabz.snakeandladder;
-import java.util.Random;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,7 +17,6 @@ public class Main
     		positionof2 = player2.player(positionof2);
     		count = count+1;
     		i = Math.max(positionof1, positionof2);
-    		
     		if(positionof1>=100) {
     			winner = "winner is player 1";
     			break;
@@ -26,8 +24,6 @@ public class Main
     		else if(positionof2>=100)
     			winner = "winner is player 2";
     		}
-    	System.out.println(i);
-    	System.out.println(winner);
-    	System.out.println("final"+count);
+    	LOG.debug(winner);
     }
 }
